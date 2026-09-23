@@ -1,5 +1,5 @@
 import "./globals.css";
-
+import { Toaster } from "sonner";
 
 export const metadata = {
   title: "Create Next App",
@@ -9,7 +9,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body  suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        {children}
+        <Toaster
+          position="bottom-left"
+          duration={3000}
+          theme="dark"
+        />
+      </body>
     </html>
   );
 }
