@@ -2,9 +2,9 @@
 import api from '@/config/axios'
 import { login, loginUser } from '@/services/authService'
 import useAuthStore from '@/store/Auth'
+import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { toast } from 'sonner'
-
 
 const Login = () => {
 
@@ -14,6 +14,7 @@ const Login = () => {
     })
     const [loading, setLoading] = useState(false)
     const { login } = useAuthStore()
+    const router = useRouter()
 
     const handelSubmit = async (e) => {
         e.preventDefault()
@@ -30,6 +31,7 @@ const Login = () => {
                 toast.success("Login Successfully..")
                 login(data, data.accessToken)
                 setLoading(false)
+                router.push("/admin")
             }
         } catch (error) {
             console.log(error)
