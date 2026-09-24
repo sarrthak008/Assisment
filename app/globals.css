@@ -10,3 +10,7 @@
 *{
   font-family:sf-pro ;
 }
+
+body{
+  overflow-x: hidden;
+}
