@@ -69,7 +69,7 @@ const Login = () => {
                             value={formData.password}
                             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                             type='password'
-                            placeholder='pass@1234'
+                            placeholder='emilyspass'
                             className='w-full sm:w-[90%] outline-none rounded-md py-1.5 px-3 text-sm sm:text-base bg-transparent border border-gray-300 focus:border-black focus:ring-1 focus:ring-black transition-all'
                         />
                     </div>
