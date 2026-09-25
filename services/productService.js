@@ -13,7 +13,12 @@ const searchProducts = async (query) => {
    return await api.get(`/products/search?q=${query}`);
 }
 
+const getProductById = (id) => {
+  return api.get(`/products/${id}`);
+};
+
 export {
     getProducts,
-    searchProducts
+    searchProducts,
+    getProductById
 }

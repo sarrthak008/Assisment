@@ -4,14 +4,16 @@ import React, { useEffect, useState } from "react";
 import { getProducts, searchProducts } from "@/services/productService";
 import { useOpeartion } from "@/store/Operation";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const Table = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalProducts, setTotalProducts] = useState(0);
+  const router = useRouter()
 
-  const limit = 6;
+  const limit = 5;
 
   const { search } = useOpeartion();
 
@@ -142,15 +144,17 @@ const Table = () => {
 
                   <td className="px-5 py-4">
                     <div className="flex justify-center gap-3 text-lg">
-                      <button className="text-blue-600 hover:text-blue-800">
+                      <button 
+                       onClick={() => router.push(`/admin/products/${product.id}`)}
+                      className="text-blue-600 cursor-pointer hover:text-blue-800">
                         <i className="ri-eye-line"></i>
                       </button>
 
-                      <button className="text-amber-600 hover:text-amber-800">
+                      <button className="text-gray-400">
                         <i className="ri-edit-line"></i>
                       </button>
 
-                      <button className="text-red-600 hover:text-red-800">
+                      <button className="text-gray-400">
                         <i className="ri-delete-bin-6-line"></i>
                       </button>
                     </div>

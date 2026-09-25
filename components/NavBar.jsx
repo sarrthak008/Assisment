@@ -28,7 +28,7 @@ const NavBar = () => {
         />
       </div>
 
-      <button className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800">
+      <button className="hidden px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800">
         + Add Product
       </button>
     </div>
