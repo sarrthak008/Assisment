@@ -26,41 +26,52 @@ A modern Product Admin Dashboard built using **Next.js 16**, **React**, **Tailwi
 - Responsive UI (Desktop & Mobile).
 - Loading and Error States.
 
----
+## 📁 Project Structure
 
-## Project Structure
+```text
+product-admin-dashboard/
+│
+├── app/
+│   ├── layout.js                 # Root Layout
+│   ├── page.js                   # Login Page
+│   ├── globals.css
+│   │
+│   └── admin/
+│       ├── layout.jsx            # Protected Admin Layout
+│       ├── page.jsx              # Dashboard
+│       │
+│       └── products/
+│           ├── page.jsx          # Products List
+│           └── [id]/
+│               └── page.jsx      # Product Details
+│
+├── components/
+│   ├── Sidebar.jsx
+│   ├── NavBar.jsx
+│   └── Table.jsx
+│
+├── config/
+│   └── axios.js                  # Axios Instance
+│
+├── services/
+│   ├── authService.js            # Login API
+│   └── productService.js         # Product APIs
+│
+├── store/
+│   ├── Auth.js                   # Authentication Store
+│   └── Operation.js              # Search Store
+│
+├── utils/
+│   └── hooks.js                  # useDebounce Hook
+│
+├── public/
+│   └── images/
+│       └── bg.jpeg               # Login Background
+│
+├── package.json
+└── README.md
+```
 
-app/
-├── page.js                  # Login Page
-├── layout.js                # Root Layout
-├── admin/
-│   ├── layout.jsx           # Protected Layout + Sidebar
-│   ├── page.jsx             # Dashboard
-│   └── products/
-│       ├── page.jsx         # Product List
-│       └── [id]/
-│           └── page.jsx     # Product Details
-│
-components/
-├── Sidebar.jsx
-├── NavBar.jsx
-└── Table.jsx
-│
-config/
-└── axios.js
-│
-services/
-├── authService.js
-└── productService.js
-│
-store/
-├── Auth.js
-└── Operation.js
-│
-utils/
-└── hooks.js                 # useDebounce Hook
-
----
 
 ## Authentication Flow
 
